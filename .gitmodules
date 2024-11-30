@@ -1,0 +1,3 @@
+[submodule "fbdoom-lux"]
+	path = fbdoom-lux
+	url = https://github.com/jewelcodes/fbdoom-lux

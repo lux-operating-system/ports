@@ -1,0 +1,66 @@
+Function:   exit_program
+Params:     AL = exit status
+Returns:    doesn't return
+Preserves:  nothing
+
+Function:   display_string
+Params:     ESI = pointer to null-terminated string
+Returns:    nothing
+Preserves:  EBX
+
+Function:   display_block
+Params:     ESI = pointer to string
+            ECX = byte count
+Returns:    nothing
+Preserves:  EBX
+
+Function:   display_character
+Params:     DL = character to display
+Returns:    nothing
+Preserves:  EBX
+
+Function:   display_number
+Params:     EAX = number to display
+Returns:    nothing
+Preserves:  EAX, EBX
+
+Function:   fatal_error
+Params:     Pointer to null-terminated error message on top of stack
+Returns:    doesn't return
+Preserves:  nothing
+
+Function:   assembler_error
+Params:     [TODO]
+Returns:    doesn't return
+Preserves:  nothing
+
+Function:   create
+Params:     EDX = pointer to null-terminated file name
+Returns:    CF = 0 on success, 1 on failure
+            EBX = file descriptor on success
+Preserves:  ESI, EDI, EBP
+
+Function:   open
+Params:     EDX = pointer to null-terminated file name
+Returns:    CF = 0 on success, 1 on failure
+            EBX = file descriptor on success
+Preserves:  ESI, EDI, EBP
+
+Function:   read/write
+Params:     EBX = file descriptor
+            ECX = byte count
+            EDX = data buffer
+Returns:    CF = 0 on success, 1 on failure
+Preserves:  EBX, ECX, EDX, ESI, EDI, EBP
+
+Function:   close
+Params:     EBX = file descriptor
+Returns:    CF = 0 on success
+Preserves:  ESI, EDI, EBP
+
+Function:   lseek
+Params:     EBX = file descriptor
+            EDX = offset
+            AL = origin (0 = SEEK_SET, 1 = SEEK_CUR, 2 = SEEK_END)
+Returns:    EAX = new absolute position
+Preserves:  EBX, ESI, EDI, EBP

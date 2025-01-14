@@ -13,7 +13,7 @@ SYSCALL_READ            = 16
 SYSCALL_WRITE           = 17
 SYSCALL_FSTAT           = 19
 SYSCALL_LSEEK           = 20
-SYSCALL_SBRK            = 50
+SYSCALL_SBRK            = 54
 
 ; open() flags
 O_RDONLY                = 0x0004

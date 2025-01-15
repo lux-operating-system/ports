@@ -89,6 +89,7 @@ display_character:
     push edi
     push esi
     push eax
+    push ecx
 
     mov [character], dl
 
@@ -98,6 +99,7 @@ display_character:
     mov edx, 1
     syscall
 
+    pop ecx
     pop eax
     pop esi
     pop edi

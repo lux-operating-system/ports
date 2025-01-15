@@ -113,16 +113,26 @@ display_number:
     test eax, eax
     jz .zero
 
-.loop:
+    push ecx
+    xor ecx, ecx
+
+.div_loop:
     xor edx, edx
     mov ebx, 10
     div ebx
     add dl, '0'
+    push edx
+
+    inc ecx
+    and eax, eax
+    jnz .div_loop
+
+.print_loop:
+    pop edx
     call display_character
+    loop .print_loop
 
-    test eax, eax
-    jnz .loop
-
+    pop ecx
     pop ebx
     ret
 
